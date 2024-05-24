@@ -1,0 +1,6 @@
+security-jwt:
+  jwtProperties:
+    secret: VGhlIGFkdmFuY2VkIGF1dGhvcml6YXRpb24gY2FwYWJpbGl0aWVzIHdpdGhpbiBTcHJpbmcgU2VjdXJpdHk=
+    tokenValidityInSeconds: 300
+    refreshTokenValidityInSeconds: 600
+    resetPasswordTokenValidityInSeconds: 60

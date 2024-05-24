@@ -1,0 +1,6 @@
+rootProject.name = 'Job-portal'
+
+include 'user-ms'
+include 'common'
+include 'common-security'
+

@@ -1,0 +1,22 @@
+databaseChangeLog:
+- changeSet:
+    id: create-user-authorities-table
+    author: imran (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: users_id
+            name: id
+            type: BIGINT
+        - column:
+            name: authority
+            type: VARCHAR(255)
+        - column:
+            name: user_id
+            type: BIGINT
+        tableName: authorities

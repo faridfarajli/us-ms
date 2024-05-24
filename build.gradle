@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version "$springBootVersion" apply false
+    id 'io.spring.dependency-management' version "$springDependencyManagerVersion" apply false
+    id 'com.bmuschko.docker-remote-api' version "$dockerVersion" apply false
+}
+
+group = 'az.ingress'
+version = '0.0.1-SNAPSHOT'
+
+
+allprojects {
+
+    def hash = 'git rev-parse --short HEAD'.execute().text.trim() //tag
+    version = "$projectVersion.$hash"
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+ //   apply plugin: 'org.springframework.boot'
+    apply plugin: 'com.bmuschko.docker-remote-api'
+
+    dependencies {
+        implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
+        implementation "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
+        implementation "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
+        implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+        implementation 'org.codehaus.groovy:groovy-json:3.0.9'
+
+        implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.2'
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

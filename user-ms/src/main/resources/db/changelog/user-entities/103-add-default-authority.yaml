@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: grant-default-authorities-to-admin
+      author: imran
+      changes:
+        - insert:
+            tableName: authorities
+            columns:
+              - column:
+                  name: authority
+                  value: ROLE_USER
+              - column:
+                  name: user_id
+                  valueComputed: "(select id from users where username='admin')"
+

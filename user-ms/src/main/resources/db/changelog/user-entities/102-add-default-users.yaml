@@ -1,0 +1,76 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-default-admin-user
+      author: imran
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: password
+                  value: '$2a$10$f0zqjKXV4MEwHinjHcWUpeeVpeGH55k4FsHqDQhuAxCUmMrV.CmD.' #123456
+              - column:
+                  name: username
+                  value: 'admin'
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: account_non_expired
+                  valueBoolean: true
+              - column:
+                  name: account_non_locked
+                  valueBoolean: true
+              - column:
+                  name: credentials_non_expired
+                  valueBoolean: true
+  - changeSet:
+      id: insert-user-imran
+      author: imran
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: credentials_non_expired
+                  valueBoolean: true
+              - column:
+                  name: account_non_locked
+                  valueBoolean: true
+              - column:
+                  name: account_non_expired
+                  valueBoolean: true
+              - column:
+                  name: password
+                  value: '$2a$10$f0zqjKXV4MEwHinjHcWUpeeVpeGH55k4FsHqDQhuAxCUmMrV.CmD.'
+              - column:
+                  name: username
+                  value: 'imran'
+  - changeSet:
+      id: insert-user-kamran
+      author: imran
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: credentials_non_expired
+                  valueBoolean: true
+              - column:
+                  name: account_non_locked
+                  valueBoolean: true
+              - column:
+                  name: account_non_expired
+                  valueBoolean: true
+              - column:
+                  name: password
+                  value: '$2a$10$f0zqjKXV4MEwHinjHcWUpeeVpeGH55k4FsHqDQhuAxCUmMrV.CmD.'
+              - column:
+                  name: username
+                  value: 'kamran'

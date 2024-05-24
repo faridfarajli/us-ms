@@ -1,0 +1,31 @@
+databaseChangeLog:
+- changeSet:
+    id: create-refresh-token-table
+    author: imran (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: refresh_token_id
+            name: id
+            type: BIGINT
+        - column:
+            name: valid
+            type: BIT(1)
+        - column:
+            name: token
+            type: VARCHAR(255)
+        - column:
+            name: username
+            type: VARCHAR(255)
+        - column:
+            name: eat
+            type: TIMESTAMP
+        - column:
+            name: iat
+            type: TIMESTAMP
+        tableName: refresh_tokens

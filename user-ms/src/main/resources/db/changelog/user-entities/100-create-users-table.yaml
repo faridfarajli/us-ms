@@ -1,0 +1,46 @@
+databaseChangeLog:
+- changeSet:
+    id: create-users-table
+    author: imran (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: users_id
+            name: id
+            type: BIGINT
+        - column:
+            name: enabled
+            type: BIT(1)
+        - column:
+            name: credentials_non_expired
+            type: BIT(1)
+        - column:
+            name: account_non_locked
+            type: BIT(1)
+        - column:
+            name: account_non_expired
+            type: BIT(1)
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: username
+            type: VARCHAR(255)
+        - column:
+            name: email
+            type: VARCHAR(100)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: surname
+            type: VARCHAR(255)
+        - column:
+              name: verification_code
+              type: VARCHAR(255)
+        tableName: users

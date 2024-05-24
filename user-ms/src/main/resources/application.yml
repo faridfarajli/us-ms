@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    include:
+      - common
+      - db
+      - security
+  mail:
+    host: smtp.gmail.com
+    port: 25
+    username: csi.az0013@gmail.com
+    password: qhbc iluf slpq omzv
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  verificationUrl: "http://localhost:8080/users/users/verify"
